@@ -4,10 +4,6 @@ import java.time.LocalDateTime;
 
 public class PriceNotFoundException extends RuntimeException {
 
-  public PriceNotFoundException(String message) {
-    super(message);
-  }
-
   public PriceNotFoundException(LocalDateTime applicationDate, Long productId, Long brandId) {
     super(
         String.format(

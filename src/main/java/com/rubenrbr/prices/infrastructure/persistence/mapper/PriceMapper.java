@@ -9,6 +9,4 @@ import com.rubenrbr.prices.infrastructure.persistence.entity.PriceEntity;
 public interface PriceMapper {
 
   Price toDomain(PriceEntity entity);
-
-  PriceEntity toEntity(Price domain);
 }
