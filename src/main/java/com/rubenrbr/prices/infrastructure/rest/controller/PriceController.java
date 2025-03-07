@@ -1,11 +1,13 @@
 package com.rubenrbr.prices.infrastructure.rest.controller;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rubenrbr.prices.application.port.in.PriceService;
+import com.rubenrbr.prices.domain.model.Price;
 import com.rubenrbr.prices.infrastructure.rest.ApiPrice;
 import com.rubenrbr.prices.infrastructure.rest.dto.PriceResponse;
 import com.rubenrbr.prices.infrastructure.rest.mapper.PriceResponseMapper;
@@ -21,12 +23,9 @@ public class PriceController implements ApiPrice {
 
   @Override
   public ResponseEntity<PriceResponse> getApplicablePrice(
-      String applicationDate, Long productId, Long brandId) {
-    LocalDateTime localDateTime = mapper.toDateTime(applicationDate);
-    return priceService
-        .getApplicablePrice(localDateTime, productId, brandId)
-        .map(mapper::toResponse)
-        .map(ResponseEntity::ok)
-        .orElse(ResponseEntity.notFound().build());
+      OffsetDateTime applicationDate, Long productId, Long brandId) {
+    LocalDateTime localDateTime = applicationDate.toLocalDateTime();
+    Price price = priceService.getApplicablePrice(localDateTime, productId, brandId);
+    return ResponseEntity.ok(mapper.toResponse(price));
   }
 }

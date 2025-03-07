@@ -10,16 +10,14 @@ import com.rubenrbr.prices.domain.port.PriceRepository;
 import com.rubenrbr.prices.infrastructure.persistence.mapper.PriceMapper;
 import com.rubenrbr.prices.infrastructure.persistence.repository.PriceJpaRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Component
+@RequiredArgsConstructor
 public class PriceRepositoryAdapter implements PriceRepository {
 
   private final PriceJpaRepository priceJpaRepository;
   private final PriceMapper priceMapper;
-
-  public PriceRepositoryAdapter(PriceJpaRepository priceJpaRepository, PriceMapper priceMapper) {
-    this.priceJpaRepository = priceJpaRepository;
-    this.priceMapper = priceMapper;
-  }
 
   @Override
   public Optional<Price> findApplicablePrice(
