@@ -1,8 +1,8 @@
-HELP.md
 target/
 .mvn/
 **/src/main/**/target/
 **/src/test/**/target/
+htmlreport/
 
 ### STS ###
 .apt_generated
