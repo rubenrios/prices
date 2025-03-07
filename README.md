@@ -2,11 +2,11 @@
 
 ## Project Description
 
-A comprehensive Price Management API that allows querying of price information for products across different time frames.
+A Price Management API that allows querying of price information for products across different time frames.
 
 ## Key Features
 
-- Price querying by product, brand, date, and chain
+- Price querying by product, brand and date
 - Historical price information storage
 - RESTful API endpoints
 - Swagger/OpenAPI documentation
@@ -44,20 +44,19 @@ src/
 │   │               │   └── exception/
 │   │               │   └── model/
 │   │               ├── infrastructure/
-│   │               │   ├── config/
-│   │               │   ├── persistence/
-│   │               │   │   ├── adapter/
-│   │               │   │   ├── entity/
-│   │               │   │   ├── mapper/
-│   │               │   │   └── repository/
-│   │               │   └── rest/
-│   │               │       ├── controller/
-│   │               │       ├── exception/
-│   │               │       └── mapper/
+│   │                   ├── config/
+│   │                   ├── persistence/
+│   │                   │   ├── adapter/
+│   │                   │   ├── entity/
+│   │                   │   ├── mapper/
+│   │                   │   └── repository/
+│   │                   └── rest/
+│   │                       ├── controller/
+│   │                       ├── exception/
+│   │                       └── mapper/
 │   └── resources/
 │       ├── api/
 │       │   └── openapi.yml
-│       ├── templates/
 │       ├── application.properties
 │       ├── data.sql
 │       └── schema.sql
