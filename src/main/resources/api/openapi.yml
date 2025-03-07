@@ -17,7 +17,6 @@ paths:
           description: Date and time for which the price is being queried
           schema:
             type: string
-            format: date-time
         - name: productId
           in: query
           required: true
@@ -85,11 +84,9 @@ components:
           description: Price list identifier
         startDate:
           type: string
-          format: date-time
           description: Start date of the price application
         endDate:
           type: string
-          format: date-time
           description: End date of the price application
         price:
           type: number
