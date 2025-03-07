@@ -101,4 +101,4 @@ The project follows a Hexagonal (Ports and Adapters) architecture:
 
 ## Licensing
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License.
